@@ -1,7 +1,4 @@
-
 require 'redmine'
-require 'redmine/i18n'
-
 require 'redmine_stealth'
 
 unless RedmineStealth::USE_UJS
@@ -20,19 +17,10 @@ require 'redmine_stealth/user_extensions'
 
 Redmine::Plugin.register :redmine_stealth do
 
-  extend Redmine::I18n
-
-  plugin_locale_glob = respond_to?(:directory) ?
-      File.join(directory, 'config', 'locales', '*.yml') :
-      File.join(Rails.root, 'vendor', 'plugins',
-                'redmine_stealth', 'config', 'locales', '*.yml')
-
-  ::I18n.load_path += Dir.glob(plugin_locale_glob)
-
   menu_options = {
       :html => {
           'id' => 'stealth_toggle',
-          'data-failure-message' => l(RedmineStealth::MESSAGE_TOGGLE_FAILED)
+          'data-failure-message' => 'failed'
       }
   }
 
