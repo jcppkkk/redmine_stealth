@@ -1,4 +1,3 @@
-
 jQuery(function($) {
 
   window.RedmineStealth = {
@@ -26,4 +25,3 @@ jQuery(function($) {
   $('#stealth_toggle').bind('ajax:error', RedmineStealth.notifyFailure);
 
 });
-
